@@ -1,5 +1,14 @@
+/* Inconsolata e Bebas Neue */
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,200;10..48,300;10..48,400&display=swap');
+
 html,
 body {
 	height: 100vh;
 	width: 100vw;
 }
+
+.text-shadow {
+	text-shadow: white -1px 1px;
+}
+
+

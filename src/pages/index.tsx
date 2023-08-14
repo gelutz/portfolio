@@ -1,6 +1,6 @@
 import Head from "next/head";
-import Middle from "~/components/Middle";
-import TopCard from "~/components/TopCard";
+import Middle from "~/components/Middle/Middle";
+import TopCard from "~/components/TopCard/TopCard";
 
 export default function Home() {
   return (
