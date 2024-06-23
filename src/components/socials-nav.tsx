@@ -21,7 +21,7 @@ export default function Topbar() {
         id="socials"
         className="flex h-full gap-x-4 transition-transform delay-200 duration-700 ease-in-out -translate-x-full"
       >
-        <div className="border-b-2 border-white w-48 h-[50%]"></div>
+        <div className="border-b-2 border-white sm:w-48 w-12 h-[50%]"></div>
         <div className="h-full flex items-center justify-center gap-x-4">
           <Link href={links.github}>
             <Image

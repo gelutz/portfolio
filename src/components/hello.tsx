@@ -10,7 +10,7 @@ export default function Hello() {
   return (
     <section className="w-full flex gap-x-8 justify-around h-fit">
       <div className="flex flex-col gap-y-4">
-        <span className="text-4xl">{texts.title.en}</span>
+        <span className="sm:text-4xl">{texts.title.en}</span>
       </div>
       <div className="">
         <Image

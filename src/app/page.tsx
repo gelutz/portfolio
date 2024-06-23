@@ -5,8 +5,11 @@ import Hello from "@/components/hello";
 import Skills from "@/components/skills";
 import Topbar from "@/components/socials-nav";
 import Terminal from "@/components/terminal";
+import { useState } from "react";
 
 export default function Home() {
+  const [lang, setLang] = useState("en");
+
   return (
     <div className="min-h-screen z-10 polka text-branco ">
       <div className="absolute top-[10%] right-[10%] ">
