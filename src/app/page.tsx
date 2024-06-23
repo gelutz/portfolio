@@ -2,43 +2,33 @@
 
 import About from "@/components/about";
 import Hello from "@/components/hello";
+import Skills from "@/components/skills";
 import Topbar from "@/components/socials-nav";
+import Terminal from "@/components/terminal/terminal";
 
 export default function Home() {
-  const skills = [
-    "Java",
-    "Spring",
-    "TypeScript",
-    "Git",
-    "Docker",
-    "Bash",
-    "Linux",
-    "Postgres",
-  ];
-
   return (
-    <div className="min-h-screen polka text-branco">
+    <div className="min-h-screen z-10 polka text-branco ">
+      <div className="absolute top-[10%] right-[10%] ">
+        <Terminal />
+      </div>
       {/* Introdução */}
       <Topbar />
-      <main className="px-16 flex flex-col gap-y-24 ">
-        <Hello />
+      <main className="relative z-30 w-full px-16">
+        <div className="flex flex-col gap-y-24 p-16 border border-cinza backdrop-blur-sm rounded-xl">
+          <Hello />
 
-        <About lang="en" />
+          <About lang="en" />
 
-        {/* Skills */}
-        <section className="h-80  space-y-8 w-full">
-          <span className="text-4xl flex gap-8">My skills</span>
-          <div className="">
-            <ul className="columns-3 pl-6 list-disc w-full h-64 justify-between">
-              {skills.map((skill) => (
-                <li className="p-4" key={skill}>
-                  {skill}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
+          <Skills />
+          {/* Projects */}
+          <section className="h-80 space-y-8 w-full ">
+            <span className="text-4xl">Projects</span>
+          </section>
+        </div>
       </main>
+
+      <div className="fixed bottom-0 w-full h-32 bg-gradient-to-b from-transparent to-cinza/30"></div>
     </div>
   );
 }

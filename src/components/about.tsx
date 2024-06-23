@@ -10,8 +10,8 @@ export default function About({ lang }: { lang: "pt" | "en" }) {
   return (
     <>
       <div className="flex w-full gap-x-4 text-lg">
-        <div className="w-full">{leftText[lang]}</div>
-        <div className="w-full">{rightText[lang]}</div>
+        <div className="w-full p-4 rounded-lg ">{leftText[lang]}</div>
+        <div className="w-full p-4 rounded-lg ">{rightText[lang]}</div>
       </div>
     </>
   );
