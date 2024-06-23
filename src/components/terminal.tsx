@@ -1,6 +1,3 @@
-import { useEffect, useState } from "react";
-import "./style.css";
-
 export default function Terminal() {
   return (
     <div className="w-[40rem] h-92 blur">

@@ -4,7 +4,7 @@ import About from "@/components/about";
 import Hello from "@/components/hello";
 import Skills from "@/components/skills";
 import Topbar from "@/components/socials-nav";
-import Terminal from "@/components/terminal/terminal";
+import Terminal from "@/components/terminal";
 
 export default function Home() {
   return (
@@ -17,10 +17,9 @@ export default function Home() {
       <main className="relative z-30 w-full px-16">
         <div className="flex flex-col gap-y-24 p-16 border border-cinza backdrop-blur-sm rounded-xl">
           <Hello />
-
           <About lang="en" />
-
           <Skills />
+
           {/* Projects */}
           <section className="h-80 space-y-8 w-full ">
             <span className="text-4xl">Projects</span>
