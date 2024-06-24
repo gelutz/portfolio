@@ -1,8 +1,15 @@
+import { LanguageContext } from "@/context/LanguageContext";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
+import { Language } from "./language";
 
 export default function Topbar() {
+  const links = {
+    github: "https://github.com/gelutz",
+    linkedin: "https://www.linkedin.com/in/gabriel-e-lutz/",
+  };
+
   useEffect(() => {
     const socials = document.getElementById("socials");
     if (socials) {
@@ -11,15 +18,11 @@ export default function Topbar() {
     }
   }, []);
 
-  const links = {
-    github: "https://github.com/gelutz",
-    linkedin: "https://www.linkedin.com/in/gabriel-e-lutz/",
-  };
   return (
-    <div className="h-24 w-full flex items-center justify-stretch">
+    <div className="h-24 w-full flex items-center">
       <div
         id="socials"
-        className="flex h-full gap-x-4 transition-transform delay-200 duration-700 ease-in-out -translate-x-full"
+        className="relative flex h-full gap-x-4 transition-transform delay-200 duration-700 ease-in-out -translate-x-full"
       >
         <div className="border-b-2 border-white sm:w-48 w-12 h-[50%]"></div>
         <div className="h-full flex items-center justify-center gap-x-4">
@@ -36,14 +39,13 @@ export default function Topbar() {
             <Image
               className="hover:scale-125 transition-transform duration-300"
               src="/linkedin.png"
-              alt="github"
+              alt="linkedin"
               height={40}
               width={40}
             />
           </Link>
         </div>
       </div>
-      <div className=""></div>
     </div>
   );
 }
