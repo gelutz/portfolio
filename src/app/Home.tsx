@@ -1,5 +1,4 @@
 "use client";
-
 import About from "@/components/about";
 import Hello from "@/components/hello";
 import Skills from "@/components/skills";
@@ -7,12 +6,14 @@ import Topbar from "@/components/topbar";
 import Terminal from "@/components/terminal";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { Language } from "@/components/language";
-import { Projects } from "@/components/projects";
 
 export default function Home() {
   return (
     <div className="min-h-screen z-10 polka text-branco ">
-      <Terminal className="absolute top-[10%] right-[10%] blur-sm" />
+      <div className="absolute top-[10%] right-[10%] ">
+        <Terminal />
+      </div>
+      {/* Introdução */}
       <Topbar />
       <LanguageProvider>
         <Language className="z-40 absolute top-[2rem] right-[6rem]" />
@@ -21,7 +22,11 @@ export default function Home() {
             <Hello />
             <About />
             <Skills />
-            <Projects />
+
+            {/* Projects */}
+            <section className="h-80 space-y-8 w-full ">
+              <span className="text-4xl">Projects</span>
+            </section>
           </div>
         </main>
       </LanguageProvider>

@@ -1,6 +1,6 @@
-export default function Terminal() {
+export default function Terminal(props?: React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className="w-[40rem] h-92 blur">
+    <div className={`w-[40rem] h-92 ${props?.className ?? ""}`}>
       <>
         <div className="relative h-8 w-full bg-cinza rounded-t-lg">
           <div className="absolute left-50 top-0 bg-cinza h-full"></div>

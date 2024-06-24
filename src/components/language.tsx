@@ -25,7 +25,7 @@ export function Language(props: React.HTMLAttributes<HTMLDivElement>) {
         <Image src="/arrow-down.svg" alt="arrow" height={15} width={15} />
       </button>
       {dropDownToggle && (
-        <div className="relative mt-4 text-branco font-bold border border-cinza p-4 backdrop-blur-sm rounded-lg">
+        <div className="relative mt-4 text-branco font-bold border border-cinza p-4 backdrop-blur-lg rounded-lg">
           <ul className="relative z-40 flex flex-col">
             <li
               onClick={() => selectLanguage("pt")}
