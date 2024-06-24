@@ -19,7 +19,7 @@ export default function Hello() {
       </div>
       <div className="">
         <Image
-          className="rounded-full max-w-[14rem]"
+          className="rounded-full md:max-w-[14rem]"
           src="https://github.com/gelutz.png"
           alt="Profile picture"
           width={300}
