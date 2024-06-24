@@ -10,7 +10,7 @@ import { Language } from "@/components/language";
 
 export default function Home() {
   return (
-    <>
+    <LanguageProvider>
       <Language className="z-40 absolute top-[2rem] right-[6rem]" />
       <div className="min-h-screen z-10 polka text-branco ">
         <div className="absolute top-[10%] right-[10%] ">
@@ -21,7 +21,7 @@ export default function Home() {
         <main className="relative z-30 w-full px-16">
           <div className="flex flex-col gap-y-24 p-16 border border-cinza backdrop-blur-sm rounded-xl">
             <Hello />
-            <About lang="en" />
+            <About />
             <Skills />
 
             {/* Projects */}
@@ -33,6 +33,6 @@ export default function Home() {
 
         <div className="fixed bottom-0 w-full h-32 bg-gradient-to-b from-transparent to-cinza/30"></div>
       </div>
-    </>
+    </LanguageProvider>
   );
 }

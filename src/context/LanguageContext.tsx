@@ -1,7 +1,17 @@
-import { ReactNode, useState } from "react";
-import { createContext } from "vm";
+import {
+  Dispatch,
+  ReactNode,
+  SetStateAction,
+  createContext,
+  useState,
+} from "react";
 
-export const LanguageContext = createContext({});
+export type TLanguageContext = {
+  language: "en" | "pt";
+  setLanguage: Dispatch<SetStateAction<"en" | "pt">>;
+};
+
+export const LanguageContext = createContext({} as TLanguageContext);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<"en" | "pt">("pt");

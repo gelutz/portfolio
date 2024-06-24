@@ -1,4 +1,9 @@
-export default function About({ lang }: { lang: "pt" | "en" }) {
+import { LanguageContext } from "@/context/LanguageContext";
+import { useContext } from "react";
+
+export default function About() {
+  const { language } = useContext(LanguageContext);
+
   const leftText = {
     en: "An enthusiastic full-stack developer who loves to learn and will never want to stop improving.",
     pt: "Um desenvolvedor full-stack entusiasta que ama aprender e nunca quer parar de melhorar.",
@@ -10,8 +15,8 @@ export default function About({ lang }: { lang: "pt" | "en" }) {
   return (
     <>
       <div className="flex flex-col sm:flex-row w-full gap-x-4 text-lg">
-        <div className="w-full p-4 rounded-lg ">{leftText[lang]}</div>
-        <div className="w-full p-4 rounded-lg ">{rightText[lang]}</div>
+        <div className="w-full p-4 rounded-lg ">{leftText[language]}</div>
+        <div className="w-full p-4 rounded-lg ">{rightText[language]}</div>
       </div>
     </>
   );
