@@ -7,7 +7,8 @@ import Topbar from "@/components/topbar";
 import Terminal from "@/components/terminal";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { Language } from "@/components/language";
-import { Projects } from "@/components/projects";
+import { Projects } from "@/components/projects/projects";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
@@ -21,7 +22,9 @@ export default function Home() {
             <Hello />
             <About />
             <Skills />
-            <Projects />
+            <Suspense fallback="Loading...">
+              <Projects />
+            </Suspense>
           </div>
         </main>
       </LanguageProvider>
