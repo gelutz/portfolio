@@ -16,7 +16,15 @@ export const getPages = async () => {
     if (!pagesIds) {
         throw new Error("No pages found");
     }
-    const blocks = await n2m.pageToMarkdown(pagesIds[0]!);
+
+    console.log(pagesIds);
+
+    const blocks: unknown[] = [];
+    pagesIds.forEach((pageId) => {
+        blocks.push(n2m.pageToMarkdown(pageId));
+    });
+
     console.log(blocks);
+
     return blocks;
 };
