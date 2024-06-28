@@ -1,6 +1,7 @@
+"use client";
+
 import { LanguageContext } from "@/context/LanguageContext";
 import { useContext } from "react";
-
 export default function Skills() {
   const { language } = useContext(LanguageContext);
 

@@ -1,4 +1,3 @@
-"use client";
 import About from "@/components/about";
 import Hello from "@/components/hello";
 import Skills from "@/components/skills";
@@ -6,8 +5,9 @@ import Topbar from "@/components/topbar";
 import Terminal from "@/components/terminal";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { Language } from "@/components/language";
+import { Projects } from "@/components/projects/projects";
 
-export default function Home() {
+export default async function Home() {
   return (
     <div className="min-h-screen z-10 polka text-branco ">
       <div className="absolute top-[10%] right-[10%] ">
@@ -24,9 +24,7 @@ export default function Home() {
             <Skills />
 
             {/* Projects */}
-            <section className="h-80 space-y-8 w-full ">
-              <span className="text-4xl">Projects</span>
-            </section>
+            <Projects />
           </div>
         </main>
       </LanguageProvider>

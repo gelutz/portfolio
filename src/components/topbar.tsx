@@ -1,8 +1,7 @@
-import { LanguageContext } from "@/context/LanguageContext";
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useContext, useEffect } from "react";
-import { Language } from "./language";
+import { useEffect } from "react";
 
 export default function Topbar() {
   const links = {

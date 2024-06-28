@@ -1,10 +1,13 @@
-import { LanguageContext, TLanguageContext } from "@/context/LanguageContext";
+"use client";
+import {
+  LanguageContext,
+  type TLanguageContext,
+} from "@/context/LanguageContext";
 import Image from "next/image";
 import { useContext, useState } from "react";
 
 export function Language(props: React.HTMLAttributes<HTMLDivElement>) {
-  const { language, setLanguage } =
-    useContext<TLanguageContext>(LanguageContext);
+  const { setLanguage } = useContext<TLanguageContext>(LanguageContext);
 
   const [dropDownToggle, setDropDown] = useState(false);
 

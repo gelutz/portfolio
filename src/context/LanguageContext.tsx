@@ -1,10 +1,7 @@
-import {
-  Dispatch,
-  ReactNode,
-  SetStateAction,
-  createContext,
-  useState,
-} from "react";
+"use client";
+
+import type { Dispatch, ReactNode, SetStateAction } from "react";
+import { createContext, useState } from "react";
 
 export type TLanguageContext = {
   language: "en" | "pt";

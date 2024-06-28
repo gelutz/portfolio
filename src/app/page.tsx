@@ -1,5 +1,3 @@
-"use client";
-
 import About from "@/components/about";
 import Hello from "@/components/hello";
 import Skills from "@/components/skills";
