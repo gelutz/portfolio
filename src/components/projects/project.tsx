@@ -1,9 +1,9 @@
 export type ProjectProps = {
-  title?: string;
+  title: string;
+  text: string;
   imageUrl?: string;
-  description?: string;
 };
 
 export const Project: React.FC<ProjectProps> = (props: ProjectProps) => {
-  return <div>Project</div>;
+  return <div>{props.title}</div>;
 };
