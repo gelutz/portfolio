@@ -2,13 +2,14 @@ import { env } from "@/env";
 import { Client } from "@notionhq/client";
 import { type PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 import { NotionToMarkdown } from "notion-to-md";
-import { type MdStringObject } from "notion-to-md/build/types";
 
-type NotionProject = {
-    title: string;
+export type NotionProject = {
     id: string;
-    homepage: boolean;
-    text: MdStringObject;
+    title: string;
+    tldr: string;
+    text: string;
+    coverUrl?: string;
+    iconUrl?: string;
 };
 
 const notion = new Client({ auth: env.NOTION_KEY });
@@ -47,6 +48,17 @@ const parseProperties = async (page: PageObjectResponse) => {
         id: page.id,
     } as NotionProject;
 
+    const textProp = page.properties.text;
+    if (textProp?.type === "rich_text") {
+        const stringObject = await parsePageText(page.id);
+        properties.text = stringObject.paragraph ?? "";
+    }
+
+    const iconProp = page.icon;
+    if (iconProp?.type == "external" && iconProp.external?.url) {
+        properties.iconUrl = iconProp.external.url;
+    }
+
     const nameProp = page.properties.Name!;
     if (nameProp.type === "title") {
         if (!nameProp?.title[0]) {
@@ -55,12 +67,11 @@ const parseProperties = async (page: PageObjectResponse) => {
         properties.title = nameProp.title[0].plain_text;
     }
 
-    const homepageProp = page.properties.Homepage!;
-    if (homepageProp.type === "select") {
-        properties.homepage = homepageProp?.select?.name == "Yes";
+    const tldrProp = page.properties.tldr!;
+    console.log(tldrProp);
+    if (tldrProp?.type === "rich_text") {
+        properties.tldr = tldrProp.rich_text[0]?.plain_text ?? "";
     }
-
-    properties.text = await parsePageText(page.id);
 
     return properties;
 };

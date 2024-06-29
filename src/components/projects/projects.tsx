@@ -1,16 +1,18 @@
 "use server";
 import { getNotionProjects } from "@/utils/notion";
-import { Project } from "./project";
+import { ProjectCard } from "./project-card";
 
 export const Projects = async () => {
   const pages = await getNotionProjects();
 
   return (
-    <section className="h-80 space-y-8 w-full ">
+    <section className="space-y-8">
       <span className="text-4xl">Projects</span>
-      {pages.map((page, index) => (
-        <Project key={index} title={page.title} text={page.text} />
-      ))}
+      <div className="flex flex-wrap justify-around gap-4">
+        {pages.map((page) => (
+          <ProjectCard key={page.id} {...page} className="max-w-64" />
+        ))}
+      </div>
     </section>
   );
 };
