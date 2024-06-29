@@ -1,9 +1,9 @@
 "use server";
-import { getNotionProjects } from "@/utils/notion";
+import { getAllProjects } from "@/utils/notion";
 import { ProjectCard } from "./project-card";
 
 export const Projects = async () => {
-  const pages = await getNotionProjects();
+  const pages = await getAllProjects();
 
   return (
     <section className="space-y-8">
