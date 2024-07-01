@@ -26,6 +26,7 @@ const config = {
                 SwitchCase: 2,
             },
         ],
+        "@typescript-eslint/no-unsafe-assignment": "off",
         "no-mixed-spaces-and-tabs": "off",
         "@typescript-eslint/array-type": "off",
         "@typescript-eslint/consistent-type-definitions": "off",

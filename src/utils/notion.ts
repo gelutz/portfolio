@@ -24,9 +24,15 @@ export const getProject = async (id: string) => {
     return properties;
 };
 
-const getIdsFromDatabase = async () => {
+const getIdsFromDatabase = async (language?: string) => {
     const database = await notion.databases.query({
         database_id: env.NOTION_DATABASE_ID,
+        filter: {
+            property: "Língua",
+            select: {
+                equals: language ?? "PT",
+            },
+        },
     });
 
     return database.results.map((page) => page.id);
