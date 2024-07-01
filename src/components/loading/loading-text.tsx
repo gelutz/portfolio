@@ -1,6 +1,6 @@
 import { Gibberish } from "./fake-text";
 
-export default function Loading({ columns = 3 }: { columns?: number }) {
+export default function LoadingText({ columns = 3 }: { columns?: number }) {
   const gerarElementos = (columns: number) => {
     const elementos: JSX.Element[] = [];
     for (let i = 0; i < columns; i++) {

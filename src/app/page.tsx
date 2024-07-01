@@ -3,7 +3,7 @@ import Hello from "@/components/hello";
 import Skills from "@/components/skills";
 import { Projects } from "@/components/projects/projects";
 import { Suspense } from "react";
-import Loading from "@/components/loading/loading";
+import LoadingText from "@/components/loading/loading-text";
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
       <Skills />
       <div className="flex flex-col gap-y-4">
         <span className="sm:text-4xl">Projects</span>
-        <Suspense fallback={<Loading />}>
+        <Suspense fallback={<LoadingText />}>
           <Projects />
         </Suspense>
       </div>

@@ -7,7 +7,7 @@ import Topbar from "@/components/topbar";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { Language } from "@/components/language";
 import { Suspense } from "react";
-import Loading from "@/components/loading/loading";
+import LoadingText from "@/components/loading/loading-text";
 
 export const metadata = {
   title: "Gabriel Lutz",
@@ -29,7 +29,7 @@ export default function RootLayout({
             <Language className="z-40 absolute top-[2rem] right-[6rem]" />
             <main className="relative z-30 w-full px-16">
               <div className="flex flex-col p-16 border border-cinza backdrop-blur-sm rounded-xl">
-                <Suspense fallback={<Loading columns={2} />}>
+                <Suspense fallback={<LoadingText columns={2} />}>
                   {children}
                 </Suspense>
               </div>

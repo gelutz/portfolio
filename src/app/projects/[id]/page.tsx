@@ -1,5 +1,5 @@
 "use server";
-import Loading from "@/components/loading/loading";
+import LoadingText from "@/components/loading/loading-text";
 import { ProjectDescription } from "@/components/projects/project-description";
 import { getProject, getProjectText } from "@/utils/notion";
 import { Suspense } from "react";
@@ -13,7 +13,7 @@ export default async function ProjectPage({
   const text = await getProjectText(params.id);
   return (
     <>
-      <Suspense fallback={<Loading />}>
+      <Suspense fallback={<LoadingText />}>
         <ProjectDescription project={project} text={text ?? ""} />
       </Suspense>
     </>
