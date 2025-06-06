@@ -1,13 +1,13 @@
-import "@/styles/globals.css";
 import "@/styles/background.css";
+import "@/styles/globals.css";
 
-import { GeistSans } from "geist/font/sans";
+import { Language } from "@/components/language";
+import LoadingText from "@/components/loading/loading-text";
 import Terminal from "@/components/terminal";
 import Topbar from "@/components/topbar";
 import { LanguageProvider } from "@/context/LanguageContext";
-import { Language } from "@/components/language";
+import { GeistSans } from "geist/font/sans";
 import { Suspense } from "react";
-import LoadingText from "@/components/loading/loading-text";
 
 export const metadata = {
   title: "Gabriel Lutz",
@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en" className={`${GeistSans.variable}`}>
       <body>
         <div className="min-h-screen z-10 polka text-branco ">
-          <Terminal className="absolute top-[8%] right-[10%] blur-sm" />
+          <Terminal className="fixed top-[8%] right-[10%] blur-sm" />
           <Topbar />
           <LanguageProvider>
             <Language className="z-40 absolute top-[2rem] right-[6rem]" />

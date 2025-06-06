@@ -1,18 +1,19 @@
-import { NotionProject } from "@/utils/notion";
 import Markdown from "react-markdown";
 
 export const ProjectDescription = async ({
-  project,
+  title,
+  tldr,
   text,
 }: {
-  project: NotionProject;
+  title: string;
+  tldr: string;
   text: string;
 }) => {
   return (
     <>
       <div className="border border-cinza rounded-xl backdrop-blur lg p-4">
-        <h1 className="text-center text-4xl font-bold">{project.title}</h1>
-        <p className="text-center text-xl">{project.tldr}</p>
+        <h1 className="text-center text-4xl font-bold">{title}</h1>
+        <p className="text-center text-xl">{tldr}</p>
       </div>
       <div className="border border-cinza rounded-xl p-16 mt-8 backdrop-blur-lg leading-loose">
         <Markdown
