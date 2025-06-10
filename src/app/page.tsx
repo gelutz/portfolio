@@ -1,9 +1,9 @@
 import About from "@/components/about";
 import Hello from "@/components/hello";
-import Skills from "@/components/skills";
-import { Projects } from "@/components/projects/projects";
-import { Suspense } from "react";
 import LoadingText from "@/components/loading/loading-text";
+import { Projects } from "@/components/project/projects";
+import Skills from "@/components/skills";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
