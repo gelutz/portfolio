@@ -11,11 +11,11 @@ export type TLanguageContext = {
 export const LanguageContext = createContext({} as TLanguageContext);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<"en" | "pt">("pt");
+    const [language, setLanguage] = useState<"en" | "pt">("pt");
 
-  return (
-    <LanguageContext.Provider value={{ language, setLanguage }}>
-      {children}
-    </LanguageContext.Provider>
-  );
+    return (
+        <LanguageContext.Provider value={{ language, setLanguage }}>
+            {children}
+        </LanguageContext.Provider>
+    );
 }
