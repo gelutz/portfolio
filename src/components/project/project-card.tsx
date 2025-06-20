@@ -1,19 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-type ProjectProps = {
-  slug: string;
-  title: string;
-  description: string;
-  iconUrl: string;
-};
-
-export const ProjectCard = ({
-    slug,
-    title,
-    description,
-    iconUrl,
-}: ProjectProps) => {
+export const ProjectCard = ({ name, slug }: { name: string, slug: string }) => {
     return (
         <div className="max-w-64">
             <Link href={`projects/${slug}`}>
@@ -21,14 +9,13 @@ export const ProjectCard = ({
                     <div className="flex justify-center px-4 gap-4">
                         <Image
                             unoptimized
-                            src={iconUrl}
+                            src={`/projects/icons/${name}.png`}
                             alt="project icon"
                             width={30}
                             height={30}
                         />
-                        <span className="text-lg font-bold">{title}</span>
+                        <span className="text-lg font-bold">{name}</span>
                     </div>
-                    <p className="p-4 text-center">{description}</p>
                 </div>
             </Link>
         </div>

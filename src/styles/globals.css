@@ -1,3 +1,22 @@
+/* ... your other styles ... */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+pre {
+  @apply rounded-lg;
+  @apply text-sm;
+  @apply my-4;
+  
+  padding: 1.25rem;
+
+  background-color: #1e1e1e;
+}
+
+pre code {
+  font-family: "JetBrains Mono", monospace;
+}

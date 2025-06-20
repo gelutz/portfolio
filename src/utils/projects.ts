@@ -1,31 +1,23 @@
 import fs from "fs";
-import matter from "gray-matter";
-import { marked } from "marked";
 import path from "path";
+import { markdownit } from "./markdown-it";
 
-const postsDirectory = path.join(process.cwd(), "posts");
+const projectsDirectory = path.join(process.cwd(), "public/projects/details");
 
-export function getPostSlugs(): string[] {
+export function slugify(name: string): string {
+    return name.split(" ").join("-").toLocaleLowerCase();
+}
+
+export function getProjectNames(): string[] {
     return fs
-        .readdirSync(postsDirectory)
+        .readdirSync(projectsDirectory)
         .filter((filename) => filename.endsWith(".md"))
         .map((filename) => filename.replace(/\.md$/, ""));
 }
 
-export function getPostBySlug(slug: string) {
-    const fullPath = path.join(postsDirectory, `${slug}.md`);
+export function getProjectHTML(name: string): string {
+    const fullPath = path.join(projectsDirectory, `${name}.md`);
     const fileContents = fs.readFileSync(fullPath, "utf8");
-
-    const { data, content } = matter(fileContents);
-    const html = marked(content);
-
-    return {
-        slug,
-        content: html,
-        metadata: data as { title: string; date: string },
-    };
-}
-
-export function getAllPosts() {
-    return getPostSlugs().map(getPostBySlug);
+    
+    return markdownit().render(fileContents);
 }

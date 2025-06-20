@@ -1,5 +1,6 @@
 import "@/styles/background.css";
 import "@/styles/globals.css";
+import "highlight.js/styles/github-dark.css";
 
 import { Language } from "@/components/language";
 import LoadingText from "@/components/loading/loading-text";
@@ -20,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
     return (
-        <html lang="en" className={`${GeistSans.variable}`}>
+        <html lang="en" className={`${GeistSans.variable} `}>
             <body>
                 <div className="min-h-screen z-10 polka text-branco ">
                     <Terminal className="fixed top-[8%] right-[10%] blur-sm" />

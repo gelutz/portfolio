@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect } from "react";
@@ -28,7 +29,7 @@ export default function Topbar() {
                     <Link href={links.github}>
                         <Image
                             className="hover:scale-125 transition-transform duration-300"
-                            src="/github.png"
+                            src="/assets/github.png"
                             alt="github"
                             height={40}
                             width={40}
@@ -37,7 +38,7 @@ export default function Topbar() {
                     <Link href={links.linkedin}>
                         <Image
                             className="hover:scale-125 transition-transform duration-300"
-                            src="/linkedin.png"
+                            src="/assets/linkedin.png"
                             alt="linkedin"
                             height={40}
                             width={40}
