@@ -10,7 +10,7 @@ export default function Home() {
     const projectNames = getProjectNames();
     
     return (
-        <div className="space-y-20">
+        <div className="space-y-20 p-16">
             <Hello />
             <About />
             <Skills />

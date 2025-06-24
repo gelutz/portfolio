@@ -29,7 +29,7 @@ export default function RootLayout({
                     <LanguageProvider>
                         <Language className="z-40 absolute top-[2rem] right-[6rem]" />
                         <main className="relative z-30 w-full px-16">
-                            <div className="flex flex-col p-16 border border-cinza backdrop-blur-sm rounded-xl">
+                            <div className="flex flex-col border border-cinza backdrop-blur-sm rounded-xl">
                                 <Suspense fallback={<LoadingText columns={2} />}>
                                     {children}
                                 </Suspense>

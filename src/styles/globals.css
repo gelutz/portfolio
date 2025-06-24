@@ -20,3 +20,11 @@ pre {
 pre code {
   font-family: "JetBrains Mono", monospace;
 }
+
+
+@layer utilities {
+  .mask-fade {
+    mask-image: linear-gradient(to bottom, black, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, black, transparent);
+  }
+}

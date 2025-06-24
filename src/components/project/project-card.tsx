@@ -8,11 +8,11 @@ export const ProjectCard = ({ name, slug }: { name: string, slug: string }) => {
                 <div className="border h-full border-cinza p-4 items-center rounded-lg">
                     <div className="flex justify-center px-4 gap-4">
                         <Image
-                            unoptimized
-                            src={`/projects/icons/${name}.png`}
+                            loading="eager"
+                            src={`/projects/assets/icons/${slug}.svg`}
                             alt="project icon"
-                            width={30}
-                            height={30}
+                            width={300}
+                            height={300}
                         />
                         <span className="text-lg font-bold">{name}</span>
                     </div>

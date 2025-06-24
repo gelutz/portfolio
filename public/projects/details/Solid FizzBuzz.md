@@ -1,6 +1,6 @@
 Esse projeto foi criado com o objetivo de estudar e demonstrar diferentes padrões de design. Nesse caso, foi utilizada a linguagem PHP, mas os conceitos são praticamente independentes da linguagem (mais focado para linguagens orientadas a objetos). Além dos padrões de design, também utilizei para estudar sobre os princípios [S.O.L.I.D.](https://en.wikipedia.org/wiki/SOLID)
 
-Para deixar o desafio mais interessante, **o código foi limitado [a um máximo de uma cláusula if] nas regras de negócio.**
+Para deixar o desafio mais interessante, **o código foi limitado [a um máximo de uma cláusula if](#único-if) nas regras de negócio.**
 
 ## Padrões de design aplicados
 

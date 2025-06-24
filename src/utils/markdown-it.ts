@@ -1,6 +1,7 @@
-import MarkdownIt from "markdown-it";
+import '@/styles/markdown-it.css';
 
 import hljs from "highlight.js";
+import MarkdownIt from "markdown-it";
 
 export const markdownit = (): MarkdownIt => {
     const md = new MarkdownIt()
