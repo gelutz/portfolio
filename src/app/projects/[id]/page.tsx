@@ -27,5 +27,6 @@ export default async function ProjectPage({ params }: { params: { id: string } }
 
     const html = getProjectHTML(projectName);
 
+
     return <ProjectDescription name={projectName} html={html} slug={id} />;
 }

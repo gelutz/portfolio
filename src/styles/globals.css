@@ -27,4 +27,8 @@ pre code {
     mask-image: linear-gradient(to bottom, black, transparent);
     -webkit-mask-image: linear-gradient(to bottom, black, transparent);
   }
+
+  .transition-hover {
+    @apply transition-all duration-150 hover:scale-110;
+  }
 }
