@@ -1,6 +1,6 @@
 Esse projeto foi criado com o objetivo de estudar e demonstrar diferentes padrões de design. Nesse caso, foi utilizada a linguagem PHP, mas os conceitos são praticamente independentes da linguagem (mais focado para linguagens orientadas a objetos). Além dos padrões de design, também utilizei para estudar sobre os princípios [S.O.L.I.D.](https://en.wikipedia.org/wiki/SOLID)
 
-Para deixar o desafio mais interessante, **o código foi limitado [a um máximo de uma cláusula if](#único-if) nas regras de negócio.**
+Para deixar o desafio mais interessante, **o código foi limitado [a um máximo de uma cláusula if](#unico-if) nas regras de negócio.**
 
 ## Padrões de design aplicados
 
@@ -112,7 +112,7 @@ class ModRule implements Rule
 }
 ```
 
-## Único `if`
+## Único `if` {#unico-if}
 
 Aqui na classe `ModRule` vemos a implementação principal da regra de negócio que será usada como o padrão Strategy para resolução do desafio.
 Como é possível ver, ela possui doi s ifs... Mas, parando para analisar, um deles é apenas para garantir que existe uma próxima regra definida, o que é algo relacionado ao design de Chain of Responsability. E tirando esse, sobra o único `if` que realmente impacta na regra de negócio:

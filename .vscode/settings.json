@@ -5,4 +5,7 @@
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": "always"
     },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
 }

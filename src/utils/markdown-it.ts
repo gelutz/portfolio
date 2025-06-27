@@ -2,9 +2,11 @@ import '@/styles/markdown-it.css';
 
 import hljs from "highlight.js";
 import MarkdownIt from "markdown-it";
+import attrs from "markdown-it-attrs";
 
 export const markdownit = (): MarkdownIt => {
-    const md = new MarkdownIt()
+    const md = new MarkdownIt();
+    md.use(attrs);
 
     md.set({
         highlight: (str, lang): string => {
@@ -18,6 +20,7 @@ export const markdownit = (): MarkdownIt => {
             return md.utils.escapeHtml(str);
         }
     });
+
 
     return md;
 }

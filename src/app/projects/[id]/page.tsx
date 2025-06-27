@@ -1,6 +1,9 @@
 import { getProjectHTML, getProjectNames, slugify } from "@/utils/projects";
 
+import { ContactCard } from "@/components/contact-card";
 import { ProjectDescription } from "@/components/project/project-description";
+import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 // 1. Generate all possible project page routes at build time
@@ -28,5 +31,25 @@ export default async function ProjectPage({ params }: { params: { id: string } }
     const html = getProjectHTML(projectName);
 
 
-    return <ProjectDescription name={projectName} html={html} slug={id} />;
+    return <>
+        <div className="flex justify-center relative">
+
+            <Image
+                loading="eager"
+                src={`/projects/assets/backgrounds/${id}.png`}
+                alt="Project background"
+                fill
+                className="object-cover bg-top aspect-auto rounded-t-xl max-h-96 mask-fade"
+            />
+            <div className="p-16 z-20 flex flex-col gap-8">
+                <div className="w-fit rounded-full p-2 border border-cinza backdrop-blur-lg transition-hover">
+                    <Link href="/">
+                        <Image className="size-6" src="/assets/back.svg" alt="Back" width={24} height={24} />
+                    </Link>
+                </div>
+                <ProjectDescription name={projectName} html={html} />
+                <ContactCard />
+            </div>
+        </div>
+    </>;
 }

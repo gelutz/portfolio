@@ -74,14 +74,18 @@
 /* ---------------------------------------------- */
 
 .markdown-body {
-  /* background-color: var(--ctp-base); */
   color: var(--ctp-text);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Lora", "Georgia", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-size: 18px;
   line-height: 1.7;
-  max-width: 720px;
   margin: 0 auto;
-  padding: 2em 1em; /* Adiciona um pouco de espaço nas laterais */
+  padding: 2em 1em;
+}
+
+@media (min-width: 768px) {
+  .markdown-body {
+    max-width: 720px;
+  }
 }
 
 /* --- Títulos --- */
