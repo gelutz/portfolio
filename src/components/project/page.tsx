@@ -1,6 +1,5 @@
 import { getProjectHTML, getProjectNames, slugify } from "@/utils/projects";
 
-import { ContactCard } from "@/components/contact-card";
 import { ProjectDescription } from "@/components/project/project-description";
 import Image from "next/image";
 import Link from "next/link";
@@ -48,7 +47,6 @@ export default async function ProjectPage({ params }: { params: { id: string } }
                     </Link>
                 </div>
                 <ProjectDescription name={projectName} html={html} />
-                <ContactCard />
             </div>
         </div>
     </>;
