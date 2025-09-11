@@ -132,4 +132,4 @@ Proprietary and confidential
 Written by Lutz, 2024
 ```
 
-**Desenvolvido com ❤️ por Lutz**
+Desenvolvido por [Lutz](https://github.com/gelutz)
